@@ -1,0 +1,23 @@
+import { useRouter } from "next/navigation";
+import React from "react";
+
+interface LogoProps extends React.HTMLAttributes<HTMLDivElement> {
+  link?: string;
+}
+
+const Logo = ({ link = "/", ...props }: LogoProps) => {
+  const router = useRouter();
+
+  return (
+    <div className="flex items-center justify-center" {...props}>
+      <h1
+        onClick={() => router.push(link)}
+        className="font-light hover:opacity-50 transition-opacity hover:cursor-pointer"
+      >
+        Ynnsuis
+      </h1>
+    </div>
+  );
+};
+
+export default Logo;
