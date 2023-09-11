@@ -7,6 +7,7 @@ import MouseEffectProvider from "@/provider/MouseEffectProvider";
 import ProjectModalProvider from "@/provider/ProjectModalProvider";
 import RecoilProvider from "@/provider/ReocoilProvider";
 import Header from "../components/Molecules/Header";
+import SpaceBackgroundProvider from "@/provider/SpaceBackgroundProvider";
 
 const mostserrat = Montserrat({ subsets: ["latin"] });
 
@@ -21,17 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-dark px-5 md:px-0">
+    <html lang="en" className="bg-dark relative">
       <body className={mostserrat.className}>
         <ThemeContextProvider>
           <RecoilProvider>
             <ProjectModalProvider>
               <MouseEffectProvider>
-                <Header />
-                <main className="w-full max-w-[1000px] mx-auto pt-10">
-                  {children}
-                </main>
+                <div className="px-5 z-10 w-full h-full min-h-screen">
+                  <Header />
+                  <main className="w-full max-w-[900px] mx-auto pt-[8vh]">
+                    {children}
+                  </main>
+                </div>
               </MouseEffectProvider>
+              <SpaceBackgroundProvider />
             </ProjectModalProvider>
           </RecoilProvider>
         </ThemeContextProvider>
