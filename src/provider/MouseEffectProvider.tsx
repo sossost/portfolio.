@@ -44,11 +44,10 @@ const MouseEffectProvider = ({ children }: MouseEffectProvider) => {
     background: `radial-gradient(circle at ${mousePosition.x}px ${
       mousePosition.y + scrollPosition
     }px,
-    rgba(16, 40, 65, 0.5),
-    rgba(7, 22, 36, 0.3) 40%,
-    rgba(5, 13, 26, 0))`,
+    rgba(35, 45, 58, 1) ,
+    rgba(35, 45, 58, 0.5) 30%,
+    rgba(35, 45, 58, 0.01))`,
     minHeight: "100vh",
-    padding: "0 20px",
   };
 
   const circleStyle: React.CSSProperties = {
@@ -63,14 +62,14 @@ const MouseEffectProvider = ({ children }: MouseEffectProvider) => {
     transformOrigin: "center",
     background: `rgba(255, 255, 255, ${isHover ? "0.3" : "0"})`,
     pointerEvents: "none",
-    zIndex: 1,
+    zIndex: 9999,
     transition: "transform 0.5s ease, background 0.5s ease",
   };
 
   return (
     <div style={containerStyle}>
-      <div style={circleStyle} />
       {children}
+      <div style={circleStyle} />
     </div>
   );
 };
