@@ -4,21 +4,35 @@ import { useSetRecoilState } from "recoil";
 
 interface AnchorProps {
   href: string;
+  openInNewTab?: boolean;
   children: React.ReactNode;
 }
 
-const Anchor = ({ href, children }: AnchorProps) => {
+const Anchor = ({ href, openInNewTab = false, children }: AnchorProps) => {
   const setIsHover = useSetRecoilState(mouseHoverAtom);
 
+  if (!openInNewTab) {
+    return (
+      <Link
+        href={href}
+        className="underline"
+        onMouseOver={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className="underline"
+    <div
+      className="underline hover:cursor-pointer"
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      onClick={() => window.open(href)}
     >
       {children}
-    </Link>
+    </div>
   );
 };
 
