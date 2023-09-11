@@ -44,10 +44,11 @@ const MouseEffectProvider = ({ children }: MouseEffectProvider) => {
     background: `radial-gradient(circle at ${mousePosition.x}px ${
       mousePosition.y + scrollPosition
     }px,
-    rgba(35, 45, 58, 1) ,
-    rgba(35, 45, 58, 0.5) 30%,
-    rgba(35, 45, 58, 0.01))`,
+    rgba(36, 44, 62 , 0.5) ,
+    rgba(27, 33, 45, 0.2) 30%,
+    rgba(20, 22, 28, 0.1))`,
     minHeight: "100vh",
+    zIndex: -9999,
   };
 
   const circleStyle: React.CSSProperties = {
