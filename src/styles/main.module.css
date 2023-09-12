@@ -1,0 +1,117 @@
+.circle_wrapper {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle_wrapper:hover {
+  cursor: pointer;
+}
+
+.circle {
+  position: relative;
+  overflow: hidden;
+  height: 50%;
+}
+
+.circle:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+@keyframes spin-circle-top {
+  from {
+    transform: rotate(-135deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes spin-circle-top-reverse {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(-135deg);
+  }
+}
+
+@keyframes spin-circle-bottom {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes spin-circle-bottom-reverse {
+  from {
+    transform: rotate(225deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+.circle.top:after {
+  border-top-color: white;
+  border-left-color: white;
+  animation: spin-circle-top 1s 1 linear both;
+}
+
+.circle.bottom:after {
+  border-top-color: white;
+  border-left-color: white;
+  top: -301px;
+  animation: spin-circle-bottom 1s 1 linear both;
+}
+
+.circle.top.clicked:after {
+  animation: spin-circle-top-reverse 1s 1 linear both;
+}
+
+.circle.bottom.clicked:after {
+  animation: spin-circle-bottom-reverse 1s 1 linear both;
+}
+
+@media (max-width: 768px) {
+  .circle_wrapper {
+    position: absolute;
+    width: 80vw;
+    height: 80vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .circle:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 80vw;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+
+  .circle.bottom:after {
+    border-top-color: white;
+    border-left-color: white;
+    top: -40vw;
+    animation: spin-circle-bottom 1s 1 linear both;
+  }
+}
