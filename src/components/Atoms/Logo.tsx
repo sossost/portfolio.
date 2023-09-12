@@ -12,7 +12,7 @@ const Logo = ({ link = "/", ...props }: LogoProps) => {
     <div className="flex items-center justify-center" {...props}>
       <h1
         onClick={() => router.push(link)}
-        className="font-light hover:opacity-50 transition-opacity hover:cursor-pointer"
+        className="font-light hover:cursor-pointer"
       >
         Ynnsuis
       </h1>
