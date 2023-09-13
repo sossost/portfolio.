@@ -11,7 +11,7 @@ import ProjectItem from "../Organisms/ProjectItem";
 import PageLayout from "../Atoms/PageLayout";
 import Spacing from "../Atoms/Spacing";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import NextStep from "../Molecules/NextStep";
+import NextStep from "../Organisms/NextStep";
 
 const ProjectTemplate = () => {
   useScrollToTop();

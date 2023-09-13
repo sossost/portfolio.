@@ -1,12 +1,11 @@
 "use client";
 
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import Anchor from "../Atoms/Anchor";
+
 import FadeInWrapper from "../Atoms/FadeInWrapper";
 import PageLayout from "../Atoms/PageLayout";
 import Spacing from "../Atoms/Spacing";
-import IconList from "../Molecules/IconList";
-import NextStep from "../Molecules/NextStep";
+import NextStep from "../Organisms/NextStep";
 
 const AboutTemplate = ({ content }: { content: string }) => {
   useScrollToTop();
