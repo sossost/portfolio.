@@ -1,11 +1,16 @@
 "use client";
 
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 import Anchor from "../Atoms/Anchor";
 import FadeInWrapper from "../Atoms/FadeInWrapper";
 import PageLayout from "../Atoms/PageLayout";
 import Spacing from "../Atoms/Spacing";
+import IconList from "../Molecules/IconList";
+import NextStep from "../Molecules/NextStep";
 
 const AboutTemplate = ({ content }: { content: string }) => {
+  useScrollToTop();
+
   return (
     <PageLayout>
       <FadeInWrapper time={200}>
@@ -25,12 +30,8 @@ const AboutTemplate = ({ content }: { content: string }) => {
         />
       </FadeInWrapper>
 
-      <Spacing className="h-2" />
-
-      <FadeInWrapper time={800}>
-        <Anchor href="/about">
-          <p className="text-lg font-medium">Contact Me</p>
-        </Anchor>
+      <FadeInWrapper time={800} className="w-fit">
+        <NextStep href="/project" text="프로젝트 보러가기" />
       </FadeInWrapper>
     </PageLayout>
   );
