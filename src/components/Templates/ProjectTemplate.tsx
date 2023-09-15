@@ -1,8 +1,8 @@
 "use client";
 
 import { useContext, useState } from "react";
-import { PROJECTS } from "@/constants/project";
 import { ProjectModalContext } from "@/provider/ProjectModalProvider";
+import { PROJECTS } from "@/data/project";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 import Title from "../Atoms/Title";

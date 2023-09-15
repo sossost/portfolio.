@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { Project } from "@/types";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 import ProjectInfo from "../Molecules/ProjectInfo";
-import Image from "next/image";
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 
 interface ProjectItemProps {
@@ -33,6 +33,9 @@ const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
           alt={project.name}
           width={490}
           height={1000}
+          placeholder="empty"
+          className="bg-gray-200"
+          priority
         />
         {isHovered && (
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-80" />
@@ -45,6 +48,7 @@ const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
         >
           <ProjectInfo
             name={project.name}
+            period={project.period}
             introduction={project.introduction}
             tags={project.tags}
           />
