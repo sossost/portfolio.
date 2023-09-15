@@ -13,7 +13,7 @@ const AboutTemplate = ({ content }: { content: string }) => {
   return (
     <PageLayout>
       <FadeInWrapper time={200}>
-        <h1 className="tracking-widest">HI I'M JANG YOON SU</h1>
+        <h1 className="tracking-widest">HI I&apos;M JANG YOON SU</h1>
       </FadeInWrapper>
 
       <FadeInWrapper time={400}>
