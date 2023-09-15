@@ -5,7 +5,6 @@ import { ReactNode, useEffect, useState } from "react";
 /** 우주 배경 프로바이더 */
 const SpaceBackgroundProvider = () => {
   const [maxSize, setMaxSize] = useState<number>(0);
-  const [stars, setStars] = useState<any>([]);
 
   // 디바운싱을 위한 변수와 상태
   let debounceTimeout: NodeJS.Timeout | null = null;
@@ -21,9 +20,6 @@ const SpaceBackgroundProvider = () => {
       // 윈도우 최대 사이즈와 별 개수 계산하는 로직
       const newMaxSize = Math.max(window.innerWidth, window.innerHeight);
       setMaxSize(newMaxSize);
-      const _size = Math.floor(newMaxSize / 16);
-      const newStars = new Array(_size).fill("");
-      setStars(newStars);
     }, debounceDelay);
   };
 
@@ -37,11 +33,15 @@ const SpaceBackgroundProvider = () => {
 
   return (
     <>
-      {[120, 240, 480, 960, 1920, 3840, 7680, 15360].map((time, i) => (
-        <StarContainer time={time} key={i}>
-          <Stars maxSize={maxSize} stars={stars} />
-        </StarContainer>
-      ))}
+      {[100, 500, 1000, 10000].map((time, i) => {
+        const stars = new Array(Math.floor((maxSize / 10) * i)).fill("");
+
+        return (
+          <StarContainer time={time} key={i}>
+            <Stars maxSize={maxSize} stars={stars} />
+          </StarContainer>
+        );
+      })}
     </>
   );
 };
@@ -55,8 +55,10 @@ interface StarContainerProps {
 
 export const StarContainer = ({
   children,
-  time = 1024,
+  time = 1000,
 }: StarContainerProps) => {
+  const animation = time <= 1000 ? `moveStar ${time}s linear infinite` : "none";
+
   return (
     <div
       style={{
@@ -68,7 +70,7 @@ export const StarContainer = ({
         width: "100vw",
         height: "100vh",
         overflowX: "hidden",
-        animation: `moveStar ${time}s linear infinite`,
+        animation: animation,
       }}
     >
       {children}
@@ -84,7 +86,7 @@ interface StarProps {
 export const Stars = ({ maxSize, stars }: StarProps) => {
   const getRandomX = () => Math.random() * maxSize;
   const getRandomY = () => Math.random() * maxSize;
-  const randomRadius = () => Math.random() * 0.7 + 1;
+  const randomRadius = () => Math.random() * 0.5 + 0.5;
 
   return (
     <>

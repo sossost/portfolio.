@@ -68,7 +68,7 @@ li {
     transform-origin: center center;
   }
   100% {
-    transform: scale(3);
+    transform: scale(5);
     transform-origin: center center;
   }
 }
