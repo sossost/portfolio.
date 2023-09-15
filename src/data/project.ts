@@ -133,3 +133,6 @@ export const PROJECTS = [
     github: "https://github.com/sossost/Twiney-Wine",
   },
 ];
+
+export const DEFAULT_IMAGE =
+  "https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/portfolio/default.png";
