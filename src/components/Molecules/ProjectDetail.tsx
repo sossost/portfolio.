@@ -1,8 +1,9 @@
 import { useFetchMd } from "@/hooks/useFetchMd";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProjectModalContext } from "@/provider/ProjectModalProvider";
 import { Project } from "@/types";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+import { DEFAULT_IMAGE } from "@/data/project";
 
 import CloseButton from "../Atoms/CloseButton";
 import TagList from "./TagList";
@@ -18,14 +19,37 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
-  const { handleModalClose } = useContext(ProjectModalContext);
   const mdContent = useFetchMd(project?.link || null);
+  const { isModal } = useContext(ProjectModalContext);
+
+  const { handleModalClose } = useContext(ProjectModalContext);
+
+  const [image, setImage] = useState<string>(DEFAULT_IMAGE);
+
+  useEffect(() => {
+    if (!isModal) {
+      setImage(
+        "https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/portfolio/default.png"
+      );
+    }
+  }, [isModal]);
+
+  useEffect(() => {
+    if (project?.image) {
+      setImage(project.image);
+    }
+    if (project?.thumbnail) {
+      setImage(project.thumbnail);
+    }
+  }, [project]);
 
   return (
     <div className="py-10 flex flex-col gap-y-4">
-      <HoverControlWrapper className="flex justify-end">
-        <CloseButton onClick={handleModalClose} />
-      </HoverControlWrapper>
+      <div className="flex justify-end">
+        <HoverControlWrapper>
+          <CloseButton onClick={handleModalClose} />
+        </HoverControlWrapper>
+      </div>
       <div className="flex flex-col gap-y-6">
         <div className="flex gap-x-4 justify-between items-end">
           <Title>{project.name}.</Title>
@@ -33,7 +57,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
         </div>
 
         <ImageFrame
-          imageUrl={project.image || project.thumbnail}
+          imageUrl={image}
           imageAlt={project.name}
           aspectRatio={0.6}
         />
