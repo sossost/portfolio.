@@ -7,6 +7,7 @@ import { ProjectModalContext } from "@/provider/ProjectModalProvider";
 import Backdrop from "../Atoms/Backdrop";
 import Modal from "../Atoms/Modal";
 import ProjectDetail from "../Molecules/ProjectDetail";
+import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 
 interface ProjectDetailModalProps {
   project: Project;
@@ -17,7 +18,11 @@ const ProjectDetailModal = ({ project }: ProjectDetailModalProps) => {
 
   return (
     <>
-      {isModal && <Backdrop onClick={handleModalClose} />}
+      {isModal && (
+        <HoverControlWrapper>
+          <Backdrop onClick={handleModalClose} />
+        </HoverControlWrapper>
+      )}
       <Modal>
         <ProjectDetail project={project} />
       </Modal>
