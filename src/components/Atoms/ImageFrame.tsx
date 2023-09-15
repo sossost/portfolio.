@@ -28,6 +28,8 @@ const ImageFrame = ({ imageUrl, imageAlt, aspectRatio }: ImageFrameProps) => {
       <Image
         src={imageUrl}
         alt={imageAlt}
+        placeholder="blur"
+        blurDataURL={imageUrl}
         fill
         sizes={"900px"}
         className="

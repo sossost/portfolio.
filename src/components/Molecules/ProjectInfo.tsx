@@ -12,7 +12,7 @@ const ProjectInfo = ({ name, introduction, tags }: ProjectInfoProps) => {
   return (
     <>
       <h4 className="font-bold">{name}</h4>
-      <p className="font-light">{introduction}</p>
+      <p className="font-light text-md leading-[22px]">{introduction}</p>
       <Spacing className="h-[6px]" />
       <TagList tags={tags} />
     </>

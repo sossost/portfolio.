@@ -15,18 +15,18 @@ const Header = () => {
         <HoverControlWrapper>
           <Logo />
         </HoverControlWrapper>
-        <ul className="flex gap-8 cursor-pointer">
+        <div className="flex gap-8 cursor-pointer">
           {HEADER_MENU.map((item) => (
-            <li key={item.title} onClick={() => router.push(item.link)}>
+            <div key={item.title} onClick={() => router.push(item.link)}>
               <HoverControlWrapper className="relative group">
                 <h4 className="font-extralight hover:scale-90 transition-transform ease-in-out duration-300 transform-gpu origin-bottom">
                   {item.title}
                 </h4>
                 <CrossEffect />
               </HoverControlWrapper>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
