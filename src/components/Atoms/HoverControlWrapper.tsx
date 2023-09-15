@@ -17,6 +17,7 @@ const HoverControlWrapper = ({
     <div
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      onClick={() => setIsHover(false)}
       {...props}
     >
       {children}
