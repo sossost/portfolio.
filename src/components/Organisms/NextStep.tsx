@@ -3,7 +3,6 @@ import IconList from "../Molecules/IconList";
 import Spacing from "../Atoms/Spacing";
 import { useSetRecoilState } from "recoil";
 import { pageState } from "@/store/pageAtom";
-import { Page } from "@/types";
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 
 interface NextStepProps {
@@ -17,8 +16,13 @@ const NextStep = ({ page, text }: NextStepProps) => {
   return (
     <>
       <Spacing className="h-8" />
-      <HoverControlWrapper onClick={() => setPage(page)}>
-        <p className="text-lg font-medium underline cursor-pointer">{text}</p>
+      <HoverControlWrapper>
+        <p
+          className="text-lg font-medium underline cursor-pointer"
+          onClick={() => setPage(page)}
+        >
+          {text}
+        </p>
       </HoverControlWrapper>
       <IconList />
     </>
