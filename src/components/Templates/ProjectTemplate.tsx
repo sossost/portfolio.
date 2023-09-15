@@ -37,7 +37,7 @@ const ProjectTemplate = () => {
 
       <Spacing className="h-4" />
 
-      <FadeInWrapper className="flex flex-col lg:flex-wrap w-full gap-x-6 gap-y-6 lg:h-[1700px]">
+      <FadeInWrapper className="columns-2 gap-x-6 lg:flex-wrap w-full">
         {PROJECTS.map((project) => (
           <ProjectItem
             key={project.id}

@@ -23,7 +23,7 @@ const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
   return (
     <HoverControlWrapper>
       <div
-        className="relative flex flex-col gap-y-2 rounded-xl overflow-hidden w-full max-w-[440px] cursor-pointer"
+        className="relative flex flex-col gap-y-2 rounded-xl overflow-hidden w-full max-w-[440px] cursor-pointer mb-6"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={onClick}
