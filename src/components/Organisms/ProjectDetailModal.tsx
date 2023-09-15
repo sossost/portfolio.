@@ -1,8 +1,8 @@
 "use client";
 
-import { Project } from "@/../types";
 import { useContext } from "react";
 import { ProjectModalContext } from "@/provider/ProjectModalProvider";
+import { Project } from "@/types";
 
 import Backdrop from "../Atoms/Backdrop";
 import Modal from "../Atoms/Modal";
