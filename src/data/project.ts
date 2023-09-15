@@ -41,7 +41,6 @@ export const PROJECTS = [
     description:
       "기능 구현에 관련된 라이브러리 도움 없이 직접 구현한 투두리스트 입니다. Context API를 활용하여 클라이언트 사이드에서 전역상태로 데이터를 캐싱하였고 옵티미스틱 업데이트로  사용자 경험을 향상시켰습니다. 또한 음악 재생기능을 추가하여 단조로운 서비스에 색다른 재미를 더했습니다. ",
     tags: ["React", "TypeScript", "Emotion", "Context API"],
-    link: "project/todo-list",
     website: "https://todolist-sosso.vercel.app/",
     github: "https://github.com/sossost/todolist",
   },

@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import { ProjectModalContext } from "@/provider/ProjectModalProvider";
 import { Project } from "@/types";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-import { DEFAULT_IMAGE } from "@/data/project";
 
 import CloseButton from "../Atoms/CloseButton";
 import TagList from "./TagList";
@@ -15,33 +14,29 @@ import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 import MarkdownRenderer from "../Atoms/MarkdownRenderer";
 
 interface ProjectDetailProps {
-  project: Project;
+  clickedProject: Project;
 }
 
-const ProjectDetail = ({ project }: ProjectDetailProps) => {
-  const mdContent = useFetchMd(project?.link || null);
-  const { isModal } = useContext(ProjectModalContext);
+const ProjectDetail = ({ clickedProject }: ProjectDetailProps) => {
+  const [project, setProject] = useState<Project | null>(null);
+  const fetchedMd = useFetchMd(project?.link || null);
+  const [mdContent, setMdContent] = useState<string | null>(null);
 
   const { handleModalClose } = useContext(ProjectModalContext);
 
-  const [image, setImage] = useState<string>(DEFAULT_IMAGE);
+  const { isModal } = useContext(ProjectModalContext);
 
   useEffect(() => {
     if (!isModal) {
-      setImage(
-        "https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/portfolio/default.png"
-      );
+      setProject(null);
+      setMdContent(null);
+    } else {
+      setProject(clickedProject);
+      setMdContent(fetchedMd);
     }
-  }, [isModal]);
+  }, [isModal, clickedProject, fetchedMd]);
 
-  useEffect(() => {
-    if (project?.image) {
-      setImage(project.image);
-    }
-    if (project?.thumbnail) {
-      setImage(project.thumbnail);
-    }
-  }, [project]);
+  if (!project) return null;
 
   return (
     <div className="py-10 flex flex-col gap-y-4">
@@ -57,7 +52,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
         </div>
 
         <ImageFrame
-          imageUrl={image}
+          imageUrl={project.image || project.thumbnail}
           imageAlt={project.name}
           aspectRatio={0.6}
         />

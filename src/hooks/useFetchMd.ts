@@ -7,7 +7,10 @@ export const useFetchMd = (fileName: string | null) => {
 
   useEffect(() => {
     const fetchMarkdown = async () => {
-      if (!fileName) return;
+      if (!fileName) {
+        setMdContent("");
+        return;
+      }
       try {
         const response = await fetch(`/posts/${fileName}.md`);
         const markdown = await response.text();
@@ -15,6 +18,7 @@ export const useFetchMd = (fileName: string | null) => {
       } catch (error: unknown) {
         const errorMessage = getErrorMessage(error);
         console.log(errorMessage);
+        setMdContent("");
       }
     };
 

@@ -24,7 +24,7 @@ const ProjectDetailModal = ({ project }: ProjectDetailModalProps) => {
         </HoverControlWrapper>
       )}
       <Modal>
-        <ProjectDetail project={project} />
+        <ProjectDetail clickedProject={project} />
       </Modal>
     </>
   );
