@@ -29,7 +29,7 @@ const MainTemplate = () => {
     // 클릭 후 2초 뒤에 about 페이지로 이동
     setTimeout(() => {
       router.push("/about");
-    }, 2000);
+    }, 1800);
   };
 
   // 컴포넌트 마운트
