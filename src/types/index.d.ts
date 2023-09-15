@@ -12,3 +12,5 @@ export interface Project {
   github: string;
   testId?: string;
 }
+
+export type Page = "main" | "about" | "projects" | "contact";

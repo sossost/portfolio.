@@ -1,7 +1,9 @@
+"use client";
+
 import Header from "@/components/Molecules/Header";
 import { ReactNode } from "react";
 
-const layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="px-5 z-10 w-full h-full min-h-screen">
       <Header />
@@ -10,4 +12,4 @@ const layout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default layout;
+export default Layout;

@@ -1,14 +1,16 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import styles from "@/styles/main.module.css";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { useSetRecoilState } from "recoil";
+import { pageState } from "@/store/pageAtom";
+import { LINK } from "@/constants/link";
 
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 
 const MainTemplate = () => {
-  const router = useRouter();
+  const setPage = useSetRecoilState(pageState);
 
   // 컴포넌트 마운트 여부
   const [isMounted, setIsMounted] = useState(false);
@@ -28,7 +30,7 @@ const MainTemplate = () => {
     }, 1000);
     // 클릭 후 2초 뒤에 about 페이지로 이동
     setTimeout(() => {
-      router.push("/about");
+      setPage(LINK.ABOUT);
     }, 1800);
   };
 

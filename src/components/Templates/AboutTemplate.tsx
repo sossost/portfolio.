@@ -1,13 +1,18 @@
 "use client";
 
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { useFetchMd } from "@/hooks/useFetchMd";
+import { LINK } from "@/constants/link";
 
 import FadeInWrapper from "../Atoms/FadeInWrapper";
 import PageLayout from "../Atoms/PageLayout";
 import Spacing from "../Atoms/Spacing";
 import NextStep from "../Organisms/NextStep";
+import MarkdownRenderer from "../Atoms/MarkdownRenderer";
 
-const AboutTemplate = ({ content }: { content: string }) => {
+const AboutTemplate = () => {
+  const mdContent = useFetchMd(LINK.ABOUT);
+
   useScrollToTop();
 
   return (
@@ -23,14 +28,11 @@ const AboutTemplate = ({ content }: { content: string }) => {
       <Spacing className="h-2" />
 
       <FadeInWrapper time={600} className="flex flex-col gap-3">
-        <div
-          dangerouslySetInnerHTML={{ __html: content }}
-          className="text-lg font-light leading-10"
-        />
+        <MarkdownRenderer markdownContent={mdContent} />
       </FadeInWrapper>
 
       <FadeInWrapper time={800} className="w-fit">
-        <NextStep href="/project" text="프로젝트 보러가기" />
+        <NextStep page={LINK.PROJECT} text="프로젝트 보러가기" />
       </FadeInWrapper>
     </PageLayout>
   );

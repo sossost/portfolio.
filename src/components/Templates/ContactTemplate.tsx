@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { VALIDATION_ERROR_MESSAGES } from "@/constants/message";
 import { VALIDATION_REGEX } from "@/constants/validation";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { LINK } from "@/constants/link";
 import axios from "axios";
 
 import Button from "../Atoms/Button";
@@ -98,7 +99,7 @@ const ContactTemplate = () => {
         </Button>
       </form>
 
-      <NextStep href="/about" text="저에 대해 더 알고싶으신가요?" />
+      <NextStep page={LINK.ABOUT} text="저에 대해 더 알고싶으신가요?" />
     </PageLayout>
   );
 };

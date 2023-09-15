@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { ProjectModalContext } from "@/provider/ProjectModalProvider";
 import { PROJECTS } from "@/data/project";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { LINK } from "@/constants/link";
 
 import Title from "../Atoms/Title";
 import FadeInWrapper from "../Atoms/FadeInWrapper";
@@ -46,7 +47,7 @@ const ProjectTemplate = () => {
         ))}
       </FadeInWrapper>
 
-      <NextStep href="/contact" text="저에게 관심이 생기셨나요?" />
+      <NextStep page={LINK.CONTACT} text="저에게 관심이 생기셨나요?" />
 
       <ProjectDetailModal project={selectedProject!} />
     </PageLayout>
