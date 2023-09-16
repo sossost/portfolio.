@@ -32,7 +32,7 @@ const SpaceBackgroundProvider = () => {
 
   return (
     <>
-      {[100, 500, 1000, 10000].map((time, i) => {
+      {[50, 100, 500, 1000, 10000].map((time, i) => {
         const stars = new Array(Math.floor((maxSize / 10) * i)).fill("");
 
         return (
