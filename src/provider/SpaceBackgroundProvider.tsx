@@ -91,7 +91,7 @@ interface StarProps {
 export const Stars = ({ maxSize, stars, index }: StarProps) => {
   const getRandomX = () => Math.random() * maxSize;
   const getRandomY = () => Math.random() * maxSize;
-  const randomRadius = () => Math.random() * 0.1 * index + 0.5;
+  const randomRadius = () => Math.random() * 0.5 + (index + 10) / 15;
 
   return (
     <>
