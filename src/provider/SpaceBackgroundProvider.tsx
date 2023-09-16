@@ -32,12 +32,12 @@ const SpaceBackgroundProvider = () => {
 
   return (
     <>
-      {[50, 100, 500, 1000, 10000].map((time, i) => {
-        const stars = new Array(Math.floor((maxSize / 10) * i)).fill("");
+      {[50, 75, 100, 250, 500, 1000].map((time, i) => {
+        const stars = new Array(Math.floor(maxSize / 10)).fill("");
 
         return (
-          <StarContainer time={time} key={i}>
-            <Stars maxSize={maxSize} stars={stars} />
+          <StarContainer time={time} key={i} index={i}>
+            <Stars maxSize={maxSize} stars={stars} index={i} />
           </StarContainer>
         );
       })}
@@ -50,13 +50,18 @@ export default SpaceBackgroundProvider;
 interface StarContainerProps {
   children: ReactNode;
   time?: number;
+  index: number;
 }
 
 export const StarContainer = ({
   children,
   time = 1000,
+  index,
 }: StarContainerProps) => {
-  const animation = time <= 1000 ? `moveStar ${time}s linear infinite` : "none";
+  const animation =
+    time < 1000
+      ? `moveStar${Math.floor(index / 2)} ${time}s linear infinite`
+      : "none";
 
   return (
     <div
@@ -80,12 +85,13 @@ export const StarContainer = ({
 interface StarProps {
   maxSize: number;
   stars: string[];
+  index: number;
 }
 
-export const Stars = ({ maxSize, stars }: StarProps) => {
+export const Stars = ({ maxSize, stars, index }: StarProps) => {
   const getRandomX = () => Math.random() * maxSize;
   const getRandomY = () => Math.random() * maxSize;
-  const randomRadius = () => Math.random() * 0.5 + 0.5;
+  const randomRadius = () => Math.random() * 0.1 * index + 0.5;
 
   return (
     <>

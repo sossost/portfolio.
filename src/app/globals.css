@@ -72,13 +72,31 @@ li {
   display: none;
 }
 
-@keyframes moveStar {
+@keyframes moveStar0 {
   0% {
     transform: scale(1);
-    transform-origin: center center;
+    opacity: 1;
   }
   100% {
-    transform: scale(5);
-    transform-origin: center center;
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes moveStar1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+@keyframes moveStar2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
