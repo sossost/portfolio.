@@ -23,9 +23,10 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
     : "transform translate-y-2 opacity-0";
 
   return (
-    <HoverControlWrapper>
+    <HoverControlWrapper className="relative">
+      <div className="absolute inset-0 bg-dark/10 z-10 pointer-events-none" />
       <div
-        className="relative flex flex-col gap-y-2 rounded-xl overflow-hidden w-full max-w-[440px] cursor-pointer mb-6"
+        className="relative flex flex-col gap-y-2 rounded-xl overflow-hidden w-full cursor-pointer mb-6 mx-auto max-w-[440px]"
         onMouseEnter={() => setIsProjectHovered(true)}
         onMouseLeave={() => setIsProjectHovered(false)}
         onClick={() => handleProjectClick(project)}
@@ -33,7 +34,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
         <Image
           src={project.thumbnail}
           alt={project.name}
-          width={490}
+          width={440}
           height={1000}
           placeholder="empty"
           className="bg-gray-200"
