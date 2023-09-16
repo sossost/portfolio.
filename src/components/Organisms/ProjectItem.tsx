@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Project } from "@/types";
 import { twMerge } from "tailwind-merge";
+import { ProjectModalContext } from "@/provider/ProjectModalProvider";
 import Image from "next/image";
 
 import ProjectInfo from "../Molecules/ProjectInfo";
@@ -10,13 +11,14 @@ import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 
 interface ProjectItemProps {
   project: Project;
-  onClick: () => void;
 }
 
-const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+const ProjectItem = ({ project }: ProjectItemProps) => {
+  const [isProjectHovered, setIsProjectHovered] = useState(false);
 
-  const projectInfoStyle = isHovered
+  const { handleProjectClick } = useContext(ProjectModalContext);
+
+  const projectInfoStyle = isProjectHovered
     ? "transform translate-y-0 opacity-1"
     : "transform translate-y-2 opacity-0";
 
@@ -24,9 +26,9 @@ const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
     <HoverControlWrapper>
       <div
         className="relative flex flex-col gap-y-2 rounded-xl overflow-hidden w-full max-w-[440px] cursor-pointer mb-6"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={onClick}
+        onMouseEnter={() => setIsProjectHovered(true)}
+        onMouseLeave={() => setIsProjectHovered(false)}
+        onClick={() => handleProjectClick(project)}
       >
         <Image
           src={project.thumbnail}
@@ -37,7 +39,7 @@ const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
           className="bg-gray-200"
           priority
         />
-        {isHovered && (
+        {isProjectHovered && (
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-80" />
         )}
         <div
