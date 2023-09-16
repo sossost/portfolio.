@@ -63,7 +63,7 @@ const MainTemplate = () => {
             <h1
               className={twMerge(
                 `font-light tracking-[9px] text-[16px] md:text-[36px] opacity-0
-                 transition-opacity duration-1000 ease-in-out`,
+                 transition-opacity duration-1000 ease-in-out leading-[20px] md:leading-[40px]`,
                 isVisible && "opacity-100"
               )}
             >
@@ -72,7 +72,7 @@ const MainTemplate = () => {
             <h1
               className={twMerge(
                 `font-medium tracking-[10px] text-[24px] md:text-[49px] opacity-0 
-                 transition-opacity duration-1000 ease-in-out`,
+                 transition-opacity duration-1000 ease-in-out leading-[30px] md:leading-[60px]`,
                 isVisible && "opacity-100"
               )}
             >

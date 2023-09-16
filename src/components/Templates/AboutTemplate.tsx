@@ -17,8 +17,9 @@ const AboutTemplate = () => {
 
   return (
     <PageLayout>
-      <FadeInWrapper time={200}>
-        <h1 className="tracking-widest">HI I&apos;M JANG YOON SU</h1>
+      <FadeInWrapper time={200} className="flex flex-col md:flex-row">
+        <h1 className="tracking-widest">HI I&apos;M</h1>
+        <h1 className="tracking-widest">JANG YOON SU</h1>
       </FadeInWrapper>
 
       <FadeInWrapper time={400}>
