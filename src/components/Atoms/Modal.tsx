@@ -38,7 +38,7 @@ const Modal = ({ children, isModal, className }: ModalProps) => {
           z-50
           h-[100vh]
           max-w-[910px]
-          w-fit
+          w-full
           overflow-hidden
           transition-all
           duration-500
