@@ -1,10 +1,14 @@
-import { ProjectModalContext } from "@/provider/ProjectModalProvider";
-import { useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-const Modal = ({ children }: { children: React.ReactNode }) => {
+interface ModalProps {
+  children: React.ReactNode;
+  isModal: boolean;
+  className?: string;
+}
+
+const Modal = ({ children, isModal, className }: ModalProps) => {
   const modalContainerRef = useRef<HTMLDivElement | null>(null);
-  const { isModal } = useContext(ProjectModalContext);
 
   const modalStyle = isModal
     ? "opacity-1 transform translate-y-[-50%]"
@@ -34,13 +38,14 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
           z-50
           h-[100vh]
           max-w-[910px]
-          w-full
+          w-fit
           overflow-hidden
           transition-all
           duration-500
           ease-in-out
         `,
-        modalStyle
+        modalStyle,
+        className
       )}
     >
       <div

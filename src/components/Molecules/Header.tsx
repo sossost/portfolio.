@@ -1,14 +1,18 @@
 "use client";
 
 import { HEADER_MENU } from "@/constants/menu";
+import { useSetRecoilState } from "recoil";
+import { pageState } from "@/store/pageAtom";
+import { MobileMenuModalContext } from "@/provider/MobileMenuProvider";
+import { HiOutlineMenu } from "react-icons/hi";
+import { useContext } from "react";
 
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 import Logo from "../Atoms/Logo";
 import CrossEffect from "../Atoms/CrossEffect";
-import { useSetRecoilState } from "recoil";
-import { pageState } from "@/store/pageAtom";
 
 const Header = () => {
+  const { handleModalOpen } = useContext(MobileMenuModalContext);
   const setPage = useSetRecoilState(pageState);
 
   return (
@@ -17,7 +21,7 @@ const Header = () => {
         <HoverControlWrapper>
           <Logo />
         </HoverControlWrapper>
-        <div className="flex gap-8 cursor-pointer">
+        <div className="gap-8 cursor-pointer hidden md:flex">
           {HEADER_MENU.map((item) => (
             <div key={item} onClick={() => setPage(item)}>
               <HoverControlWrapper className="relative group">
@@ -29,6 +33,10 @@ const Header = () => {
             </div>
           ))}
         </div>
+        <HiOutlineMenu
+          className="text-[40px] md:hidden"
+          onClick={handleModalOpen}
+        />
       </div>
     </div>
   );
