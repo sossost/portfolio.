@@ -18,7 +18,7 @@ export default function Home() {
       {page === LINK.MAIN ? (
         <MainTemplate />
       ) : (
-        <Layout>
+        <Layout key={page}>
           {page === LINK.ABOUT && <AboutTemplate />}
           {page === LINK.PROJECT && <ProjectTemplate />}
           {page === LINK.CONTACT && <ContactTemplate />}
