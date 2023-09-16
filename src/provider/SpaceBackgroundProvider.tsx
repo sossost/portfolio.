@@ -4,7 +4,7 @@ import { ReactNode, useEffect, useState } from "react";
 
 /** 우주 배경 프로바이더 */
 const SpaceBackgroundProvider = () => {
-  const [maxSize, setMaxSize] = useState<number>(0);
+  const [maxSize, setMaxSize] = useState<number>(1920);
 
   // 디바운싱을 위한 변수와 상태
   let debounceTimeout: NodeJS.Timeout | null = null;
@@ -25,7 +25,6 @@ const SpaceBackgroundProvider = () => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    handleResize();
     return () => {
       window.removeEventListener("resize", handleResize);
     };

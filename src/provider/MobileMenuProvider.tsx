@@ -20,8 +20,6 @@ export const MobileMenuModalContext =
 const MobileMenuModalProvider = ({ children }: { children: ReactNode }) => {
   const [isModal, setIsModal] = useState(false);
 
-  console.log(isModal);
-
   const handleModalOpen = () => {
     setIsModal(true);
     document.body.style.overflow = "hidden";
