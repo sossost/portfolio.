@@ -62,7 +62,7 @@ export const PROJECTS = [
     name: "트립스케치",
     period: "2023.06.29 ~ 진행중",
     thumbnail:
-      "https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/portfolio/%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B8%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8E%E1%85%B5+%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png",
+      "https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/portfolio/%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B8%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8E%E1%85%B5.png",
     introduction:
       "여행을 다니면서 느꼈던 감정들을 기록하고 공유하는 서비스 입니다.",
     description:
