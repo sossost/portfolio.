@@ -35,7 +35,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
           src={project.thumbnail}
           alt={project.name}
           width={440}
-          height={1000}
+          height={440}
           placeholder="empty"
           className="bg-gray-200"
           priority
