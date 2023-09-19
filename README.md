@@ -36,4 +36,4 @@ $ npm run dev
 | DeepDark       | ![#151725](https://via.placeholder.com/10/151725?text=+) `#151725` |
 | DeepCyan       | ![#164E63](https://via.placeholder.com/10/164E63?text=+) `#164E63` |
 | LightGrey      | ![#EBEBEB](https://via.placeholder.com/10/EBEBEB?text=+) `#EBEBEB` |
-| White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
+| White          | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) `#FFFFFF` |
