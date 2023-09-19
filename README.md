@@ -4,6 +4,9 @@
 </h1>
 <img width="1375" alt="demo" src="https://github.com/sossost/portfolio./assets/110542210/537d20c4-f79e-43c7-94c5-e998326bd340">
 
+## 🌐 배포 주소
+[ynnsuis.com](https://www.ynnsuis.com/)
+
 ## 📅 개발 기간
 
 - 2023.09.11 ~ 2023.09.17
