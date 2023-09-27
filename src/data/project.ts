@@ -60,7 +60,7 @@ export const PROJECTS = [
   {
     id: "tripsketch",
     name: "트립스케치",
-    period: "2023.06.29 ~ 진행중",
+    period: "2023.06.29 ~ 2023.09.27",
     thumbnail:
       "https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/portfolio/%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B8%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8E%E1%85%B5.png",
     introduction:
