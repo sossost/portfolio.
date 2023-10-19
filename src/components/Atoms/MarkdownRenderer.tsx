@@ -25,6 +25,7 @@ const MarkdownRenderer = ({ markdownContent }: { markdownContent: string }) => {
                 className="w-full h-auto rounded-md"
                 unoptimized={false}
                 loading="lazy"
+                layout="responsive"
               />
             );
           },
