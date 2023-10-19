@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -11,6 +12,22 @@ const MarkdownRenderer = ({ markdownContent }: { markdownContent: string }) => {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
+          img({ node, className, children, ...props }) {
+            return (
+              <Image
+                {...props}
+                src={props.src as string}
+                alt={props.alt as string}
+                width={(props.width as number) || 750}
+                height={(props.height as number) || 750}
+                sizes="750px"
+                placeholder="empty"
+                className="w-full h-auto rounded-md"
+                unoptimized={false}
+                loading="lazy"
+              />
+            );
+          },
           ol({ node, className, children, ...props }) {
             return (
               <ol {...props} className="px-5">
@@ -27,7 +44,7 @@ const MarkdownRenderer = ({ markdownContent }: { markdownContent: string }) => {
           },
           li({ node, className, children, ...props }) {
             return (
-              <li {...props} className="py-1">
+              <li {...props} className="py-1 font-light">
                 {children}
               </li>
             );
