@@ -1,6 +1,6 @@
 #### 아키텍쳐 다이어그램
 
-![맛이슈-아키텍처.jpg](https://file.notion.so/f/f/22f608db-9f85-4b54-9281-d319030585b8/5f7e40ee-bc02-4d3e-944b-9a347985615b/%E1%84%86%E1%85%A1%E1%86%BA%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2-%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%B5%E1%84%90%E1%85%A6%E1%86%A8%E1%84%8E%E1%85%A5.jpg?id=7177b817-d819-428c-810d-5b83b90098cd&table=block&spaceId=22f608db-9f85-4b54-9281-d319030585b8&expirationTimestamp=1697817600000&signature=6gIW1DO2_-tHyZzB9lKl7iLKP4raAokDczjH1HUa3x0&downloadName=%E1%84%86%E1%85%A1%E1%86%BA%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2-%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%B5%E1%84%90%E1%85%A6%E1%86%A8%E1%84%8E%E1%85%A5.jpg)
+![맛이슈-아키텍처.jpg](https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%BA%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2+%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC+%E1%84%89%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%83%E1%85%A9.png)
 
 ##
 
