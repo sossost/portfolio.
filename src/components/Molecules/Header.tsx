@@ -5,18 +5,46 @@ import { useSetRecoilState } from "recoil";
 import { pageState } from "@/store/pageAtom";
 import { MobileMenuModalContext } from "@/provider/MobileMenuProvider";
 import { HiOutlineMenu } from "react-icons/hi";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 import Logo from "../Atoms/Logo";
 import CrossEffect from "../Atoms/CrossEffect";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const { handleModalOpen } = useContext(MobileMenuModalContext);
   const setPage = useSetRecoilState(pageState);
 
+  const headerBgColor = isScrolled
+    ? "bg-dark/80 backdrop-blur-xl"
+    : "bg-transparent";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="flex justify-center h-28">
+    <div
+      className={twMerge(
+        `fixed w-screen flex justify-center h-20 px-5 z-50`,
+        headerBgColor
+      )}
+    >
       <div className="flex justify-between items-center w-[1100px] text-neutral-100">
         <HoverControlWrapper>
           <Logo />

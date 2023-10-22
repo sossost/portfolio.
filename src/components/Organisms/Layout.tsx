@@ -5,9 +5,9 @@ import { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="px-5 z-10 w-full h-full min-h-screen">
+    <div className="z-10 w-full h-full min-h-screen">
       <Header />
-      <main className="w-full max-w-[900px] mx-auto pt-8 md:pt-[8vh]">
+      <main className="w-full max-w-[900px] mx-auto px-5  pt-32">
         {children}
       </main>
     </div>
