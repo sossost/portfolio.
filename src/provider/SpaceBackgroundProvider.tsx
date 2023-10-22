@@ -1,35 +1,13 @@
-"use client";
+import { ReactNode } from "react";
 
-import { ReactNode, useEffect, useState } from "react";
+interface SpaceBackgroundProviderProps {
+  maxSize?: number;
+}
 
 /** 우주 배경 프로바이더 */
-const SpaceBackgroundProvider = () => {
-  const [maxSize, setMaxSize] = useState<number>(1920);
-
-  // 디바운싱을 위한 변수와 상태
-  let debounceTimeout: NodeJS.Timeout | null = null;
-  const debounceDelay = 500;
-
-  // 윈도우 리사이즈 이벤트 핸들러
-  const handleResize = () => {
-    // 리렌더링 최적화를 위한 디바운스 처리
-    if (debounceTimeout) {
-      clearTimeout(debounceTimeout);
-    }
-    debounceTimeout = setTimeout(() => {
-      // 윈도우 최대 사이즈와 별 개수 계산하는 로직
-      const newMaxSize = Math.max(window.innerWidth, window.innerHeight);
-      setMaxSize(newMaxSize);
-    }, debounceDelay);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+const SpaceBackgroundProvider = ({
+  maxSize = 1920,
+}: SpaceBackgroundProviderProps) => {
   return (
     <>
       {[50, 75, 100, 250, 500, 1000].map((time, i) => {
