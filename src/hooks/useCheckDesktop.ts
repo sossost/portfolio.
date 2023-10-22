@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { isDesktopAtom } from "../store/isDesktopAtom";
 
 const useCheckDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useRecoilState(isDesktopAtom);
 
   useEffect(() => {
     if (window.innerWidth > 1024) {
