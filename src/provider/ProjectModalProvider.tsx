@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectDetailModal from "@/components/Organisms/ProjectDetailModal";
+import ProjectDetailModal from "@/components/Templates/ProjectDetailModal";
 import { Project } from "@/types";
 import { ReactNode, createContext, useState } from "react";
 
