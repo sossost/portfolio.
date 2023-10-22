@@ -16,8 +16,6 @@ const ProjectTemplate = () => {
   useScrollToTop();
   const isDesktop = useCheckDesktop();
 
-  console.log(isDesktop);
-
   const projectList = isDesktop
     ? PROJECTS
     : PROJECTS.sort((a, b) => a.index - b.index);
