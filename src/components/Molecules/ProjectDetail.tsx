@@ -31,7 +31,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="py-10 flex flex-col gap-y-4">
-      <div className="fixed right-5 top-5 z-10 bg-dark/80 rounded-full backdrop-blur-lg md:static md:flex md:justify-end md:right-0">
+      <div className="fixed right-5 top-10 z-10 bg-dark/80 rounded-full backdrop-blur-lg md:static md:flex md:justify-end md:right-0">
         <HoverControlWrapper>
           <CloseButton onClick={handleModalClose} />
         </HoverControlWrapper>
