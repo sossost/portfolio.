@@ -3,6 +3,7 @@
 import { PROJECTS } from "@/data/project";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { LINK } from "@/constants/link";
+import useCheckDesktop from "@/hooks/useCheckDesktop";
 
 import Title from "../Atoms/Title";
 import FadeInWrapper from "../Atoms/FadeInWrapper";
@@ -13,6 +14,13 @@ import NextStep from "../Organisms/NextStep";
 
 const ProjectTemplate = () => {
   useScrollToTop();
+  const isDesktop = useCheckDesktop();
+
+  console.log(isDesktop);
+
+  const projectList = isDesktop
+    ? PROJECTS
+    : PROJECTS.sort((a, b) => a.index - b.index);
 
   return (
     <PageLayout>
@@ -21,7 +29,7 @@ const ProjectTemplate = () => {
       <Spacing className="h-4" />
 
       <FadeInWrapper className="md:columns-2 gap-x-6 lg:flex-wrap w-full">
-        {PROJECTS.map((project) => (
+        {projectList.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}
       </FadeInWrapper>

@@ -1,5 +1,6 @@
 export const PROJECTS = [
   {
+    index: 0,
     id: "portfolio",
     name: "포트폴리오 사이트",
     period: "2023.09.11~2023.09.17",
@@ -14,6 +15,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/portfolio.",
   },
   {
+    index: 2,
     id: "matissue",
     name: "맛이슈",
     period: "2023.05.29~2023.06.23",
@@ -31,6 +33,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/matissue",
   },
   {
+    index: 4,
     id: "todo-list",
     name: "투두리스트",
     period: "2023.07.30~2023.08.06",
@@ -45,6 +48,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/todolist",
   },
   {
+    index: 6,
     id: "ai-saas-clone",
     name: "AI SaaS 클론",
     period: "2023.07.25~2023.07.30",
@@ -58,6 +62,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/SaaS-AI-Tutorial",
   },
   {
+    index: 1,
     id: "tripsketch",
     name: "트립스케치",
     period: "2023.06.29 ~ 2023.09.27",
@@ -79,6 +84,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/tripsketch",
   },
   {
+    index: 3,
     id: "fog-of-seoul",
     name: "서울의 안개",
     period: "2023.07.18 ~ 진행중",
@@ -100,6 +106,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/fog-of-seoul",
   },
   {
+    index: 5,
     id: "spotify-clone",
     name: "스포티파이 클론",
     period: "2023.07.13~2023.07.24",
@@ -120,6 +127,7 @@ export const PROJECTS = [
     github: "https://github.com/sossost/Spotify-Clone-With-Next.js13",
   },
   {
+    index: 7,
     id: "twiney-wine",
     name: "Twiney Wine",
     period: "2023.04.17~2023.04.28",
