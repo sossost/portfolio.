@@ -13,13 +13,15 @@ const MarkdownRenderer = ({ markdownContent }: { markdownContent: string }) => {
         remarkPlugins={[remarkGfm]}
         components={{
           img({ node, className, children, ...props }) {
+            const { src, alt } = props;
+
             return (
               <Image
                 {...props}
-                src={props.src as string}
-                alt={props.alt as string}
-                width={(props.width as number) || 750}
-                height={(props.height as number) || 750}
+                width={750}
+                height={0}
+                src={src as string}
+                alt={alt as string}
                 sizes="750px"
                 placeholder="empty"
                 className="w-full h-auto rounded-md"
