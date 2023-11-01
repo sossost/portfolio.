@@ -25,14 +25,15 @@ const Anchor = ({ href, openInNewTab = false, children }: AnchorProps) => {
   }
 
   return (
-    <div
+    <a
+      href={href}
       className="underline hover:cursor-pointer"
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      onClick={() => window.open(href)}
+      target="_blank"
     >
       {children}
-    </div>
+    </a>
   );
 };
 
