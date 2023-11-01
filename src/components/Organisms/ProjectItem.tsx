@@ -1,10 +1,10 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Project } from "@/types";
 import { twMerge } from "tailwind-merge";
-import { ProjectModalContext } from "@/provider/ProjectModalProvider";
 import Image from "next/image";
+import { useProjectModalStore } from "@/store/projectModalState";
 
 import ProjectInfo from "../Molecules/ProjectInfo";
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
@@ -16,7 +16,7 @@ interface ProjectItemProps {
 const ProjectItem = ({ project }: ProjectItemProps) => {
   const [isProjectHovered, setIsProjectHovered] = useState(false);
 
-  const { handleProjectClick } = useContext(ProjectModalContext);
+  const { handleProjectClick } = useProjectModalStore();
 
   const projectInfoStyle = isProjectHovered
     ? "transform translate-y-0 opacity-1"
