@@ -43,7 +43,7 @@
 
 1. Next/Image, Sharp 패키지 를 활용하여 `이미지 크기를 최적화하여 평균적으로 20%, 최대 93%가량 감소`, `이미지 로딩속도를 2배 빠르게 개선,` 또한 placeholder 기능을 활용하여 스켈레톤 처리를 통해 데이터 레이아웃 쉬프트 방지
 
-![맛이슈-아키텍처.jpg](https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%BA%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2+%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC+%E1%84%89%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%83%E1%85%A9.png)
+![맛이슈 메인페이지 렌더링 순서도](https://tripsketchbucket.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%BA%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2+%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC+%E1%84%89%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%84%83%E1%85%A9.png)
 
 2. SSR 환경에서 CSS-in-JS 사용시 페이지 로드시에 뒤늦은 스타일적용으로 인해 레이아웃 쉬프트가 일어나는 FOUC(Flash of Unstyled Content)문제
 
