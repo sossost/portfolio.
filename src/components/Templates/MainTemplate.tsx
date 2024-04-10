@@ -12,34 +12,24 @@ import HoverControlWrapper from "../Atoms/HoverControlWrapper";
 const MainTemplate = () => {
   const setPage = useSetRecoilState(pageState);
 
-  // 컴포넌트 마운트 여부
   const [isMounted, setIsMounted] = useState(false);
-
-  // 텍스트 컴포넌트 등장 여부
   const [isVisible, setIsVisible] = useState(false);
-
-  // 가운데 원 영역 클릭 여부
   const [clicked, setClicked] = useState(false);
 
-  // 가운데 원 영역 클릭 이벤트
   const handleClickCircle = () => {
     setClicked(true);
-    // 클릭 후 1초 뒤에 텍스트 컴포넌트 사라짐
     setTimeout(() => {
       setIsVisible(false);
     }, 1000);
-    // 클릭 후 2초 뒤에 about 페이지로 이동
     setTimeout(() => {
       setPage(LINK.ABOUT);
     }, 1800);
   };
 
-  // 컴포넌트 마운트
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // 텍스트 컴포넌트 등장 타이밍
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsVisible(true);
