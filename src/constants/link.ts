@@ -3,4 +3,5 @@ export const LINK = {
   ABOUT: "about",
   CONTACT: "contact",
   PROJECT: "project",
+  RESUME: "resume",
 };
