@@ -32,7 +32,7 @@ const ProjectTemplate = () => {
         ))}
       </FadeInWrapper>
 
-      <NextStep page={LINK.CONTACT} text="저에게 관심이 생기셨나요?" />
+      <NextStep page={LINK.RESUME} text="저에 대해 더 알고싶으신가요?" />
     </PageLayout>
   );
 };

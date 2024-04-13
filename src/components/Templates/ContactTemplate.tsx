@@ -99,7 +99,7 @@ const ContactTemplate = () => {
         </Button>
       </form>
 
-      <NextStep page={LINK.ABOUT} text="저에 대해 더 알고싶으신가요?" />
+      <NextStep page={LINK.ABOUT} text="다시한번 보실래요?" />
     </PageLayout>
   );
 };
