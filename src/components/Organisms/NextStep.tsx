@@ -1,9 +1,7 @@
-import Anchor from "../Atoms/Anchor";
 import IconList from "../Molecules/IconList";
 import Spacing from "../Atoms/Spacing";
-import { useSetRecoilState } from "recoil";
-import { pageState } from "@/store/pageAtom";
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
+import { useRouter } from "next/navigation";
 
 interface NextStepProps {
   page: string;
@@ -11,7 +9,7 @@ interface NextStepProps {
 }
 
 const NextStep = ({ page, text }: NextStepProps) => {
-  const setPage = useSetRecoilState(pageState);
+  const router = useRouter();
 
   return (
     <>
@@ -19,7 +17,7 @@ const NextStep = ({ page, text }: NextStepProps) => {
       <HoverControlWrapper>
         <p
           className="text-lg font-medium underline cursor-pointer"
-          onClick={() => setPage(page)}
+          onClick={() => router.push(`?page=${page}`)}
         >
           {text}
         </p>

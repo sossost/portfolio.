@@ -3,14 +3,13 @@
 import styles from "@/styles/main.module.css";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { useSetRecoilState } from "recoil";
-import { pageState } from "@/store/pageAtom";
 import { LINK } from "@/constants/link";
 
 import HoverControlWrapper from "../Atoms/HoverControlWrapper";
+import { useRouter } from "next/navigation";
 
 const MainTemplate = () => {
-  const setPage = useSetRecoilState(pageState);
+  const router = useRouter();
 
   const [isMounted, setIsMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +21,7 @@ const MainTemplate = () => {
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      setPage(LINK.ABOUT);
+      router.push(`?page=${LINK.ABOUT}`);
     }, 1800);
   };
 

@@ -2,18 +2,16 @@ import { useContext } from "react";
 import { MobileMenuModalContext } from "@/provider/MobileMenuProvider";
 import { HEADER_MENU } from "@/constants/menu";
 import { twMerge } from "tailwind-merge";
-import { useSetRecoilState } from "recoil";
-import { pageState } from "@/store/pageAtom";
 
 import Backdrop from "../Atoms/Backdrop";
+import { useRouter } from "next/navigation";
 
 const MobileMenuModal = () => {
+  const router = useRouter();
   const { isModal, handleModalClose } = useContext(MobileMenuModalContext);
 
-  const setPage = useSetRecoilState(pageState);
-
   const handleMenuClick = (item: string) => {
-    setPage(item);
+    router.push(`?page=${item}`);
     handleModalClose();
   };
 
