@@ -21,7 +21,7 @@ const MainTemplate = () => {
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      router.push(`?page=${LINK.ABOUT}`);
+      router.push(`?category=${LINK.ABOUT}`);
     }, 1800);
   };
 

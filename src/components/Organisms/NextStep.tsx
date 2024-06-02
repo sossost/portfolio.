@@ -17,7 +17,7 @@ const NextStep = ({ page, text }: NextStepProps) => {
       <HoverControlWrapper>
         <p
           className="text-lg font-medium underline cursor-pointer"
-          onClick={() => router.push(`?page=${page}`)}
+          onClick={() => router.push(`?category=${page}`)}
         >
           {text}
         </p>

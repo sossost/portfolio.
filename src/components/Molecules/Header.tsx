@@ -50,7 +50,7 @@ const Header = () => {
         </HoverControlWrapper>
         <div className="gap-8 cursor-pointer hidden md:flex">
           {HEADER_MENU.map((item) => (
-            <div key={item} onClick={() => router.push(`?page=${item}`)}>
+            <div key={item} onClick={() => router.push(`?category=${item}`)}>
               <HoverControlWrapper className="relative group">
                 <h4 className="font-extralight hover:scale-90 transition-transform ease-in-out duration-300 transform-gpu origin-bottom">
                   {item}
