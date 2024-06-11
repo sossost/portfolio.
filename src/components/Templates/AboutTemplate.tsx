@@ -26,12 +26,14 @@ const AboutTemplate = () => {
 
       <FadeInWrapper time={600} className="flex flex-col gap-3">
         <p className="font-light text-lg leading-10">
-          3년의 사업 경험과 디자인 전공을 바탕으로 늘 UI/UX를 고민합니다.
+          디자인 전공 및 3년의 사업 경험을 바탕으로 늘 더 나은 UI/UX를
+          고민합니다.
           <br />
-          기술적인 도전을 좋아하며, 성장하는 것 그 자체를 즐깁니다.
+          다양한 사이드 프로젝트, 오픈소스 기여 등을 통해 기술적인 도전,
+          성장하는 것을 즐깁니다.
           <br />
-          컴포넌트 설계, 디자인 시스템에 관심이 많으며 이를 통해 DX를 향상
-          시키는 일을 좋아합니다.
+          비효율적인 부분을 개선하는 것을 좋아합니다. 공통된 부분들을 패키지화한
+          경험이 있습니다.
         </p>
       </FadeInWrapper>
 
